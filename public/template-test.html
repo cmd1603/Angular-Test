@@ -2,13 +2,27 @@
 <html ng-app="templateTest">
 <head>
 	<meta charset="utf-8">
-	<title>Bootstrapping an Angular Module</title>
+	<title>Testing Angular Modules</title>
+    <style media="screen">
+        li:first-child {
+            font-style: italic;
+        }
+        li:last-child {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
     <ul>
-        <li ng-repeat="number in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" ng-if="num % 2 == 0">
-            {{ number }} is divisble by 3!
+        <li ng-repeat="number in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" ng-if="number % 3 != 0"
+            ng-hide> {{ number }}
+        </li>
+    </ul>
+
+    <ul>
+        <li ng-repeat="letter in ['A', 'B', 'C', 'D', 'E', 'F' ,'G']" ng-if="letter != 'B'"
+            ng-hide> {{ letter }}
         </li>
     </ul>
 
